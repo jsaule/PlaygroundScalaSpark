@@ -108,7 +108,14 @@ AND address_street_name = 'Franklin Ave');
 --from my gym when I was working out last week on January 
 --the 9th.
 
---FOLLWING WITNESS 1:
+--FOLLOWING WITNESS 1:
 
-SELECT * FROM facebook_event_checkin;
-
+SELECT * FROM person p
+JOIN facebook_event_checkin fec 
+ON p.id = fec.person_id
+JOIN drivers_license dl 
+ON p.license_id = dl.id 
+WHERE fec.event_name LIKE '%Symphony%' 
+AND date LIKE '201712%'
+GROUP BY fec.person_id
+HAVING COUNT(*)=3;
