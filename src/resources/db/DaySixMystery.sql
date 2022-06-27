@@ -127,7 +127,7 @@ GROUP BY fec.person_id
 HAVING COUNT(*)=3;
 
 SELECT * FROM interview i 
-WHERE i.person_id = '99716';
+WHERE person_id = '99716';
 
 SELECT * FROM income i 
 WHERE ssn = '987756388';
