@@ -111,14 +111,25 @@ AND address_street_name = 'Franklin Ave');
 ---------------------
 ---------------------
 
---FOLLOWING WITNESS 1:
+--FOLLOWING WITNESS 1 LEAD:
 
 SELECT * FROM person p
 JOIN facebook_event_checkin fec 
 ON p.id = fec.person_id
 JOIN drivers_license dl 
 ON p.license_id = dl.id 
-WHERE fec.event_name LIKE '%Symphony%' 
+WHERE fec.event_name LIKE '%Symphony%'
+AND dl.hair_color = 'red'
+AND dl.car_model LIKE '%Model%S%'
+AND dl.car_make = 'Tesla'
 AND date LIKE '201712%'
 GROUP BY fec.person_id
 HAVING COUNT(*)=3;
+
+SELECT * FROM interview i 
+WHERE i.person_id = '99716';
+
+SELECT * FROM income i 
+WHERE ssn = '987756388';
+
+--Suspect: Miranda Priestly
