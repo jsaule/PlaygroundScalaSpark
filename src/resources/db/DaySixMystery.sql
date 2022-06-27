@@ -120,6 +120,7 @@ JOIN drivers_license dl
 ON p.license_id = dl.id 
 WHERE fec.event_name LIKE '%Symphony%'
 AND dl.hair_color = 'red'
+AND height BETWEEN 65 AND 67
 AND dl.car_model LIKE '%Model%S%'
 AND dl.car_make = 'Tesla'
 AND date LIKE '201712%'
