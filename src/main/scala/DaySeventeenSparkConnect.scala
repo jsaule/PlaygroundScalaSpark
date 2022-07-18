@@ -7,8 +7,8 @@ object DaySeventeenSparkConnect extends App {
   println(s"Session started on Spark version ${spark.version}")
 
   val myRange = spark.range(100).toDF("number")
-  val divisibleBy5 = myRange.where("number % 10 = 0")
-  divisibleBy5.show(10)
+  val divisibleBy10 = myRange.where("number % 10 = 0")
+  divisibleBy10.show()
 
   spark.stop()
 }
